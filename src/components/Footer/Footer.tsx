@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="md:basis-1/2 lg:basis-1/3">
           <Logo color="white" />
         </div>
-        <ul className="mt-8 flex w-full items-center justify-between md:order-5 md:mt-0 md:basis-1/2 md:justify-start md:gap-x-3">
+        <ul className="mt-8 flex w-1/2 items-center justify-between md:order-5 md:mt-0 md:basis-1/2 md:justify-start md:gap-x-3">
           <li>
             <FaceBook className="cursor-pointer" enableHover={false} />
           </li>
