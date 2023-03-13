@@ -1,0 +1,6 @@
+.bg-container {
+    /* background: linear-gradient(-0deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.3)),url(var(--bg-img)); */
+    background-position: center;
+    background-size: "cover";
+    background-repeat: "no-repeat"
+}

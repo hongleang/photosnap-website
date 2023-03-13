@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply hover:opacity-50 cursor-pointer uppercase tracking-widest font-bold transition-opacity duration-200;
+  }
+
+  .btn-nav {
+    @apply bg-black py-2 px-8 text-center uppercase tracking-widest text-white font-bold hover:text-black hover:bg-gray-200 transition duration-300;
+  }
+
+  .btn-invite {
+    @apply relative flex gap-x-4 text-sm font-bold uppercase tracking-widest;
+  }
+
+  .invite-underline {
+    @apply absolute -bottom-1 h-[1px] w-2/3 origin-left scale-x-0 transition duration-100;
+  }
+
+  .card-story {
+    @apply items-end w-full relative flex h-[375px] flex-1 cursor-pointer flex-col justify-end bg-cover bg-center bg-no-repeat p-10 transition duration-300 lg:hover:-translate-y-5 md:h-[550px] md:w-1/2 md:min-w-cardDesktop;
+  }
+}
