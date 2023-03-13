@@ -1,17 +1,23 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
-export default function AnimateBtn({ ...props }) {
+type Props = {
+  className?: string;
+  children: ReactNode;
+  underline?: string;
+}
+
+export default function AnimateBtn({ className, underline, children }: Props) {
   return (
-    <button className={"btn-invite group " + props.className ?? ""} {...props}>
-      <div
+    <button className={"btn-invite group " + className ?? ""} >
+      <span
         className={`invite-underline group-hover:scale-x-100 ${
-          props?.underline && props.underline === "dark"
+          underline && underline === "dark"
             ? "bg-white"
             : "bg-black"
         }`}
-      ></div>
+      ></span>
       <span className="mr-4 text-sm uppercase tracking-widest">
-        {props.children}
+        {children}
       </span>
       <svg xmlns="http://www.w3.org/2000/svg" width="43" height="14">
         <g fill="none" fillRule="evenodd" stroke="#fff">
