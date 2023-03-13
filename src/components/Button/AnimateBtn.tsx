@@ -4,11 +4,13 @@ type Props = {
   className?: string;
   children: ReactNode;
   underline?: string;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
-export default function AnimateBtn({ className, underline, children }: Props) {
+export default function AnimateBtn({ className, underline, children, onMouseLeave, onMouseEnter }: Props) {
   return (
-    <button className={"btn-invite group " + className ?? ""} >
+    <button className={"btn-invite group " + className ?? ""} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <span
         className={`invite-underline group-hover:scale-x-100 ${
           underline && underline === "dark"
