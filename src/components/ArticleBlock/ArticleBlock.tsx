@@ -1,22 +1,25 @@
+import { animated } from "@react-spring/web";
+
 import { ArticleBlockType } from "../../models/ArticleBlock";
 import AnimateBtn from "../Button/AnimateBtn";
-import InviteBtn from "../Button/AnimateBtn";
 
 type Props = {
   articleBlock: ArticleBlockType;
   reverse?: boolean;
+  style?: any;
 };
 
 export default function ArticleBlock({
   articleBlock: { title, desc, image, theme },
   reverse = false,
+  style,
 }: Props) {
   const { lg, md } = image;
   const themeClassName =
     theme === "dark" ? "bg-black text-white" : "bg-white text-black";
 
   return (
-    <div className="md:flex">
+    <animated.div className="md:flex" style={style ? style : {}}>
       <picture className={`flex-1 ${reverse ? "order-2" : ""}`}>
         <source media="(min-width:1024px)" srcSet={lg} />
         <source media="(min-width:768px)" srcSet={md} />
@@ -44,6 +47,6 @@ export default function ArticleBlock({
           <AnimateBtn underline={theme}>Get an invite</AnimateBtn>
         </div>
       </div>
-    </div>
+    </animated.div>
   );
 }

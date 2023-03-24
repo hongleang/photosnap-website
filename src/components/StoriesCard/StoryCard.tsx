@@ -1,3 +1,5 @@
+import { animated } from "@react-spring/web";
+
 import React, { useMemo } from "react";
 import { Story } from "../../models/Stories";
 import { useWindowDimensions } from "../../utils/useWindowDimensions";
@@ -5,9 +7,10 @@ import { useWindowDimensions } from "../../utils/useWindowDimensions";
 type Props = {
   details: Story;
   hasDate: boolean;
+  style: any;
 };
 
-export default function StoryCard({ details, hasDate }: Props) {
+export default function StoryCard({ details, hasDate, style }: Props) {
   const { img, author, name, date } = details;
   const { sm, lg, md } = img;
 
@@ -18,10 +21,11 @@ export default function StoryCard({ details, hasDate }: Props) {
   }, [width]);
 
   return (
-    <div
+    <animated.div
       className="card-story group"
       style={{
         backgroundImage: `url('${responsiveImg}')`,
+        ...style
       }}
     >
       <div
@@ -45,6 +49,6 @@ export default function StoryCard({ details, hasDate }: Props) {
           </svg>
         </div>
       </div>
-    </div>
+    </animated.div>
   );
 }

@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { animated, useSpring } from "@react-spring/web";
 import Home from "./page/Home";
 import Stories from "./page/Stories";
 import Features from "./page/Features";
@@ -8,7 +9,6 @@ import NoMatch from "./page/NoMatch";
 import SmoothScroll from "./components/SmoothScroll/SmoothScroll";
 
 function App() {
-
   return (
     <>
       <SmoothScroll>
@@ -23,7 +23,7 @@ function App() {
         </Routes>
       </SmoothScroll>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
